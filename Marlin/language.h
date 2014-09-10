@@ -22,7 +22,7 @@
 // 13 Basque-Euskera
 
 #ifndef LANGUAGE_CHOICE
-	#define LANGUAGE_CHOICE 1  // Pick your language from the list above
+	#define LANGUAGE_CHOICE 5  // Pick your language from the list above
 #endif
 
 #define PROTOCOL_VERSION "1.0"
@@ -34,7 +34,7 @@
 	#define MACHINE_NAME "Rumba"
 	#define FIRMWARE_URL "https://github.com/ErikZalm/Marlin/"
 #elif MOTHERBOARD == 83
-	#define MACHINE_NAME "SAV MkI"
+	#define MACHINE_NAME "BCN3DR"
 	#define FIRMWARE_URL "https://github.com/fmalpartida/Marlin/tree/SAV-MkI-config"
 #elif MOTHERBOARD == 77
 	#define MACHINE_NAME "3Drag"

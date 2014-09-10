@@ -16,7 +16,7 @@
 // startup. Implementation of an idea by Prof Braino to inform user that any changes made to this
 // build by the user have been successfully uploaded into firmware.
 #define STRING_VERSION_CONFIG_H __DATE__ " " __TIME__ // build date and time
-#define STRING_CONFIG_H_AUTHOR "(fm, SAV MkI)" //Who made the changes.
+#define STRING_CONFIG_H_AUTHOR "(kitusmark, BCN3DR SAV mkI)" //Who made the changes.
 
 // SERIAL_PORT selects which serial port should be used for communication with the host.
 // This allows the connection of wireless adapters (for instance) to non-default port pins.
@@ -78,11 +78,11 @@
 #endif
 
 // Define this to set a custom name for your generic Mendel,
-#define CUSTOM_MENDEL_NAME "SAV MkI"
+#define CUSTOM_MENDEL_NAME "BCN3DR SAV mkI"
 
 // Define this to set a unique identifier for this printer, (Used by some programs to differentiate between machines)
 // You can use an online service to generate a random UUID. (eg http://www.uuidgenerator.net/version4)
-#define MACHINE_UUID "0e3df20b-f1c8-45d7-a2e5-d33a6f96d9ed"
+//#define MACHINE_UUID "0e3df20b-f1c8-45d7-a2e5-d33a6f96d9ed"
 
 // This defines the number of extruders
 #define EXTRUDERS 1                              
@@ -110,16 +110,16 @@
 // NOTE NB all values for DELTA_* values MOUST be floating point, so always have a decimal point in them
 
 // Center-to-center distance of the holes in the diagonal push rods.
-#define DELTA_DIAGONAL_ROD 250.0 // mm
+#define DELTA_DIAGONAL_ROD 180.65 // mm
 
 // Horizontal offset from middle of printer to smooth rod center.
-#define DELTA_SMOOTH_ROD_OFFSET 175.0 // mm
+#define DELTA_SMOOTH_ROD_OFFSET 142.66 // mm
 
 // Horizontal offset of the universal joints on the end effector.
-#define DELTA_EFFECTOR_OFFSET 33.0 // mm
+#define DELTA_EFFECTOR_OFFSET 24.03 // mm
 
 // Horizontal offset of the universal joints on the carriages.
-#define DELTA_CARRIAGE_OFFSET 18.0 // mm
+#define DELTA_CARRIAGE_OFFSET 28.0 // mm
 
 // Effective horizontal distance bridged by diagonal push rods.
 #define DELTA_RADIUS (DELTA_SMOOTH_ROD_OFFSET-DELTA_EFFECTOR_OFFSET-DELTA_CARRIAGE_OFFSET)
@@ -163,7 +163,7 @@
 #define TEMP_SENSOR_0 1
 #define TEMP_SENSOR_1 0
 #define TEMP_SENSOR_2 0
-#define TEMP_SENSOR_BED 1
+#define TEMP_SENSOR_BED 0
 
 
 // This makes temp sensor 1 a redundant sensor for sensor 0. If the temperatures difference between these sensors is to high the print will be aborted.
@@ -357,11 +357,11 @@ const bool Z_MAX_ENDSTOP_INVERTING = true; // set to true to invert the logic of
 #define max_software_endstops true  // If true, axis won't move to coordinates greater than the defined lengths below.
 
 // Travel limits after homing
-#define X_MAX_POS 205
-#define X_MIN_POS 0
-#define Y_MAX_POS 205
-#define Y_MIN_POS 0
-#define Z_MAX_POS 200
+#define X_MAX_POS 85
+#define X_MIN_POS -85
+#define Y_MAX_POS 85
+#define Y_MIN_POS -85
+#define Z_MAX_POS MANUAL_Z_HOME_POS
 #define Z_MIN_POS 0
 
 #define X_MAX_LENGTH (X_MAX_POS - X_MIN_POS)
@@ -475,12 +475,12 @@ const bool Z_MAX_ENDSTOP_INVERTING = true; // set to true to invert the logic of
 // default settings
 
 // delta speeds must be the same on xyz
-#define DEFAULT_AXIS_STEPS_PER_UNIT   {80, 80, 80, 760*1.1}  // default steps per unit for Kossel (GT2, 20 tooth)
-#define DEFAULT_MAX_FEEDRATE          {500, 500, 2, 25}    // (mm/sec)
-#define DEFAULT_MAX_ACCELERATION      {9000 ,9000,9000,10000}    // X, Y, Z, E maximum start speed for accelerated moves. E default values are good for skeinforge 40+, for older versions raise them a lot.
+#define DEFAULT_AXIS_STEPS_PER_UNIT   {80, 80, 80, 458.3}  // default steps per unit for Kossel (GT2, 20 tooth)
+#define DEFAULT_MAX_FEEDRATE          {1000, 1000, 1000, 50}    // (mm/sec)
+#define DEFAULT_MAX_ACCELERATION      {2000,2000,2000,380}    // X, Y, Z, E maximum start speed for accelerated moves. E default values are good for skeinforge 40+, for older versions raise them a lot.
 
-#define DEFAULT_ACCELERATION          3000    // X, Y, Z and E max acceleration in mm/s^2 for printing moves
-#define DEFAULT_RETRACT_ACCELERATION  3000   // X, Y, Z and E max acceleration in mm/s^2 for retracts
+#define DEFAULT_ACCELERATION          2000    // X, Y, Z and E max acceleration in mm/s^2 for printing moves
+#define DEFAULT_RETRACT_ACCELERATION  380   // X, Y, Z and E max acceleration in mm/s^2 for retracts
 
 // Offset of the extruders (uncomment if using more than one and relying on firmware to position when changing).
 // The offset has to be X=0, Y=0 for the extruder 0 hotend (default extruder).
@@ -520,7 +520,7 @@ const bool Z_MAX_ENDSTOP_INVERTING = true; // set to true to invert the logic of
 #define EEPROM_CHITCHAT
 
 // Preheat Constants
-#define PLA_PREHEAT_HOTEND_TEMP 180
+#define PLA_PREHEAT_HOTEND_TEMP 215
 #define PLA_PREHEAT_HPB_TEMP 70
 #define PLA_PREHEAT_FAN_SPEED 255   // Insert Value between 0 and 255
 
